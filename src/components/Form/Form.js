@@ -27,7 +27,7 @@ const Form = {
   checkName() {
     const name = this.formSection.find('#name');
     const nameSpan = this.formSection.find('.form__tooltip#name');
-    const nameSurname = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/i;
+    const nameSurname = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ-\s]{2,}$/i;
     if (!nameSurname.test(name[0].value)) {
       name.addClass('-redBorder');
       nameSpan.addClass('-visible');
@@ -40,7 +40,7 @@ const Form = {
   checkSurname() {
     const surname = this.formSection.find('#surname');
     const surnameSpan = this.formSection.find('.form__tooltip#surname');
-    const nameSurname = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/i;
+    const nameSurname = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ-\s]{2,}$/i;
     if (!nameSurname.test(surname[0].value)) {
       surname.addClass('-redBorder');
       surnameSpan.addClass('-visible');
@@ -78,7 +78,8 @@ const Form = {
   checkCity() {
     const city = this.formSection.find('#city');
     const citySpan = this.formSection.find('.form__tooltip#city');
-     if (city[0].value.length == 0) {
+    const regCity = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ-\s]{2,}$/i;
+     if (!regCity.test(city[0].value)) {
       city.addClass('-redBorder');
       citySpan.addClass('-visible');
     }
@@ -90,7 +91,8 @@ const Form = {
   checkCountry() {
     const country = this.formSection.find('#country');
     const countrySpan = this.formSection.find('.form__tooltip#country');
-    if (country[0].value.length == 0) {
+    const regCountry = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ-\s]{2,}$/i;
+    if (!regCountry.test(country[0].value)) {
       country.addClass('-redBorder');
       countrySpan.addClass('-visible');
     }
