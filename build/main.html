@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>SOFT-FUSION Template</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Szablon">
+    <meta name="description" content="Szablon opis">
+    <meta name="keywords" content="Szablon keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/manifest.webmanifest">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.min.css">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <div class="form"><img class="form__logo" src="./assets/images/Icon/logo.png" alt="logo">
+      <div class="form__back"><img class="form__icon" src="./assets/images/Icon/back.png" alt="icon">Cofnij</div>
+      <div class="form__title">Czekamy na Ciebie, wypełnij kwestionariusz</div>
+      <div class="form__title -secondTitle">Dane kandydata</div>
+      <form class="form__form" action="" method="" enctype="multipart/form-data"><img class="form__icon -people" src="./assets/images/Icon/people.png" alt="icon">
+        <div class="form__item">
+          <div class="form__inputName">Imię</div>
+          <div class="form__required">*</div>
+          <input class="form__input" type="text" id="name" required><span class="form__tooltip" id="name">Wpisz imię</span>
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Nazwisko</div>
+          <div class="form__required">*</div>
+          <input class="form__input" type="text" id="surname" required><span class="form__tooltip" id="surname">Wpisz nazwisko</span>
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Data urodzenia</div>
+          <input class="form__input" type="text">
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Telefon komórkowy (+48 xxx xxx xxx)</div>
+          <div class="form__required">*</div>
+          <input class="form__input" type="number" id="phoneNumber" placeholder="+48" required><span class="form__tooltip" id="phoneNumber">Wpisz poprawny numer telefonu</span>
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Email</div>
+          <div class="form__required">*</div>
+          <input class="form__input" type="email" id="email" placeholder="example@domain.com" required><span class="form__tooltip" id="email">Wpisz poprawny adres email</span>
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Adres</div>
+          <input class="form__input" type="text" placeholder="Jana Kochanowskiego 23/3">
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Miasto</div>
+          <div class="form__required">*</div>
+          <input class="form__input" list="citys" id="city" placeholder="Gliwice" required><span class="form__tooltip" id="city">Wybierz miasto</span>
+          <dataList id="citys">
+            <option value="Warszawa"></option>
+            <option value="Olsztyn"></option>
+            <option value="Gliwice"></option>
+          </dataList>
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Kraj</div>
+          <div class="form__required">*</div>
+          <input class="form__input" list="countrys" id="country" placeholder="Polska" required><span class="form__tooltip" id="country">Wybierz kraj</span>
+          <dataList id="countrys">
+            <option value="Polska"></option>
+          </dataList>
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Wykształcenie</div>
+          <input class="form__input" list="education" placeholder="średnie">
+          <dataList id="education">
+            <option value="Podstawowe"></option>
+            <option value="Gimnazjalne"></option>
+            <option value="Zasadnicze zawodowe"></option>
+            <option value="Średnie"></option>
+            <option value="Wyższe"></option>
+          </dataList>
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Kwalifikacje zawodowe</div>
+          <input class="form__input" type="text" placeholder="Opisz swoje doświadczenie i umiejętności, Jeżeli masz uprawnienia napisz o nich">
+        </div>
+        <div class="form__item">
+          <div class="form__inputName">Przebieg dotychczasowego zatrudnienia</div>
+          <input class="form__input" type="text" id="experience" placeholder="Napisz gdzie pracowałeś(-aś) i co robiłeś(-aś). Tutaj możesz wpisać stanowiska i zakresy obowiązków">
+        </div>
+        <div class="form__title -secondTitle">Powiedz nam więcej o pracy swoich marzeń</div>
+        <div class="form__item">
+          <div class="form__inputName">Jakiej pracy szukasz? (np. rodzaje stanowisk, branża, inne oczekiwania)</div>
+          <div class="form__required">*</div>
+          <input class="form__input" type="text" id="work" placeholder="Tutaj możesz pisać bez ograniczeń :)" required><span class="form__tooltip" id="work">Napisz czego szukasz!</span>
+        </div>
+        <div class="form__text">Administratorem Pani/Pana danych osobowych jest Personnel Service Sp. z o.o. ul. Bolesława Chrobrego 5, 11-400 Kętrzyn, NIP: 8943069469, REGON: 363064852</div>
+        <div class="form__text -redText">Zapoznaj się z naszą polityką prywatności </div>
+        <div class="form__item -agree">
+          <div class="form__check">
+            <input class="form__checkbox" type="checkbox" id="first">
+            <label class="form__label" id="first"> </label><span class="form__tooltip -inCheck" id="first">Potrzebujemy twojej zgody</span>
+          </div>
+          <div class="form__inner">
+            <div class="form__required">*</div>
+            <div class="form__text">Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu w związku z procesem rekrutacji.</div>
+          </div>
+        </div>
+        <div class="form__item -agree">
+          <div class="form__check">
+            <input class="form__checkbox" type="checkbox" id="second">
+            <label class="form__label" id="second"> </label><span class="form__tooltip -inCheck" id="second">Potrzebujemy twojej zgody</span>
+          </div>
+          <div class="form__inner">
+            <div class="form__required">*</div>
+            <div class="form__text">Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu w celu otrzymania informacji o ofertach pracy związanych z rekrutacją. </div>
+          </div>
+        </div>
+        <button class="form__button" type="submit">Wyślij</button>
+      </form>
+    </div>
+    <script async src="./assets/scripts/main.min.js"></script>
+  </body>
+</html>

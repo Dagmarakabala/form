@@ -1,0 +1,188 @@
+.form
+  display: block
+  position: relative
+  width: 80%
+  max-width: 1440px
+  margin: auto
+  padding: 30px 50px 150px 50px
+  color: $mine-shaft
+
+  +max($bp-sm)
+    padding: 0px 20px
+
+  &__logo
+    width: auto
+    max-width: 50%
+    padding: 20px 0px
+
+  &__back
+    display: inline-block
+    position: absolute
+    right: 20px
+    top: 30px
+
+  &__icon
+    padding-right: 5px
+
+  &__title
+    padding-bottom: 30px
+    font-size: 65px
+    font-weight: bold
+
+    +max($bp-sm)
+      font-size: 30px
+
+  &__form
+    display: block
+    position: relative
+    width: 100%
+
+  &__item 
+    position: relative
+    margin: 20px 0px
+
+  &__inputName
+    display: inline
+    font-size: 28px
+
+    +max($bp-sm)
+      font-size: 20px
+
+  &__required
+    display: inline
+    font-size: 28px
+    color: $red
+
+    +max($bp-sm)
+      font-size: 20px
+
+  &__input
+    width: 100%
+    margin: 10px 0px
+    height: 30px
+    border: 0
+    border-bottom: 1px solid $grey
+    font-size: 24px
+
+    +max($bp-sm)
+      font-size: 16px
+
+    &::placeholder
+      font-size: 20px
+      color: $grey
+
+      +max($bp-sm)
+        font-size: 16px
+
+    &:focus
+      outline-style: none
+
+  &__checkbox
+    position: absolute
+    width: 38px
+    height: 38px
+    opacity: 0
+    cursor: pointer
+
+  &__text
+    display: inline
+    font-size: 20px
+
+    +max($bp-sm)
+      font-size: 16px
+
+  &__label
+    display: inline-block
+    position: relative
+    width: 38px
+    height: 38px
+    background: url('../images/Icon/false.png')
+    z-index: -1
+
+  &__button
+    position: absolute
+    right: 0
+    padding: 10px 50px
+    background-color: $red
+    border: 0px
+    border-radius: 5px
+    font-size: 28px
+    color: $white
+
+    +max($bp-sm)
+      font-size: 20px
+
+  &__check
+    display: block
+    position: relative
+
+  &__tooltip 
+    position: absolute
+    bottom: 20px
+    right: 0px
+    padding: 5px 10px
+    background: $light-red
+    border-radius: 5px
+    box-shadow: 0px 2px $grey
+    color: $red
+    font-size: 16px
+    visibility: hidden
+    opacity: 0
+    
+    +max($bp-sm)
+      font-size: 14px
+
+  &__tooltip:before 
+    display: block
+    position: absolute
+    width: 0
+    height: 0
+    bottom: -15px
+    right: 10px
+    border: 8px solid transparent
+    border-right-color: $light-red
+    content: ""
+    z-index: 2
+    transform: rotate(270deg)
+
+.-secondTitle
+  font-size: 45px
+
+  +max($bp-sm)
+    font-size: 18px
+
+.-people
+  display: inline-block
+  position: absolute
+  right: -35px
+  top: -50px
+
+.-redText
+  color: $red
+  text-decoration: underline
+
+.-checked
+  background: url('../images/Icon/true.png')
+
+.-redBorder
+  border: 0
+  border-bottom: 1px solid $red
+
+.-agree
+  display: flex
+  flex-wrap: nowrap
+  gap: 10px
+  padding-top: 25px
+
+.-inCheck
+  width: auto
+  bottom: auto
+  top: -35px
+  right: -175px
+
+  &::before
+    left: 10px
+
+.-visible
+  visibility: visible
+  opacity: 1
