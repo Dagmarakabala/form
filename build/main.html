@@ -35,12 +35,12 @@
         <div class="form__item">
           <div class="form__inputName">Imię</div>
           <div class="form__required">*</div>
-          <input class="form__input" type="text" id="name" required><span class="form__tooltip" id="name">Wpisz imię</span>
+          <input class="form__input" type="text" id="name" name="name" required><span class="form__tooltip" id="name">Wpisz imię</span>
         </div>
         <div class="form__item">
           <div class="form__inputName">Nazwisko</div>
           <div class="form__required">*</div>
-          <input class="form__input" type="text" id="surname" required><span class="form__tooltip" id="surname">Wpisz nazwisko</span>
+          <input class="form__input" type="text" id="surname" name="surname" required><span class="form__tooltip" id="surname">Wpisz nazwisko</span>
         </div>
         <div class="form__item">
           <div class="form__inputName">Data urodzenia</div>
@@ -49,12 +49,12 @@
         <div class="form__item">
           <div class="form__inputName">Telefon komórkowy (+48 xxx xxx xxx)</div>
           <div class="form__required">*</div>
-          <input class="form__input" type="number" id="phoneNumber" placeholder="+48" required><span class="form__tooltip" id="phoneNumber">Wpisz poprawny numer telefonu</span>
+          <input class="form__input" type="number" id="phoneNumber" placeholder="+48" name="phoneNumber" required><span class="form__tooltip" id="phoneNumber">Wpisz poprawny numer telefonu</span>
         </div>
         <div class="form__item">
           <div class="form__inputName">Email</div>
           <div class="form__required">*</div>
-          <input class="form__input" type="email" id="email" placeholder="example@domain.com" required><span class="form__tooltip" id="email">Wpisz poprawny adres email</span>
+          <input class="form__input" type="email" id="email" placeholder="example@domain.com" name="email" required><span class="form__tooltip" id="email">Wpisz poprawny adres email</span>
         </div>
         <div class="form__item">
           <div class="form__inputName">Adres</div>
@@ -63,31 +63,32 @@
         <div class="form__item">
           <div class="form__inputName">Miasto</div>
           <div class="form__required">*</div>
-          <input class="form__input" list="citys" id="city" placeholder="Gliwice" required><span class="form__tooltip" id="city">Wybierz miasto</span>
-          <dataList id="citys">
-            <option value="Warszawa"></option>
-            <option value="Olsztyn"></option>
-            <option value="Gliwice"></option>
-          </dataList>
+          <select id="citys" name="city">
+            <option value=""> </option>
+            <option value="Warszawa">Warszawa</option>
+            <option value="Olsztyn">Olsztyn</option>
+            <option value="Gliwice">Gliwice</option>
+          </select><span class="form__tooltip" id="city">Wybierz miasto</span>
         </div>
         <div class="form__item">
           <div class="form__inputName">Kraj</div>
           <div class="form__required">*</div>
-          <input class="form__input" list="countrys" id="country" placeholder="Polska" required><span class="form__tooltip" id="country">Wybierz kraj</span>
-          <dataList id="countrys">
-            <option value="Polska"></option>
-          </dataList>
+          <select id="countrys" name="country">
+            <option value=""> </option>
+            <option value="Polska">Polska</option>
+            <option value="Czechy">Czechy</option>
+          </select><span class="form__tooltip" id="country">Wybierz kraj</span>
         </div>
         <div class="form__item">
           <div class="form__inputName">Wykształcenie</div>
-          <input class="form__input" list="education" placeholder="średnie">
-          <dataList id="education">
-            <option value="Podstawowe"></option>
-            <option value="Gimnazjalne"></option>
-            <option value="Zasadnicze zawodowe"></option>
-            <option value="Średnie"></option>
-            <option value="Wyższe"></option>
-          </dataList>
+          <select id="education">
+            <option value=""> </option>
+            <option value="Podstawowe">Podstawowe</option>
+            <option value="Gimnazjalne">Gimnazjalne</option>
+            <option value="Zasadnicze zawodowe">Zasadnicze zawodowe</option>
+            <option value="Średnie">Średnie</option>
+            <option value="Wyższe">Wyższe</option>
+          </select>
         </div>
         <div class="form__item">
           <div class="form__inputName">Kwalifikacje zawodowe</div>
@@ -101,13 +102,22 @@
         <div class="form__item">
           <div class="form__inputName">Jakiej pracy szukasz? (np. rodzaje stanowisk, branża, inne oczekiwania)</div>
           <div class="form__required">*</div>
-          <input class="form__input" type="text" id="work" placeholder="Tutaj możesz pisać bez ograniczeń :)" required><span class="form__tooltip" id="work">Napisz czego szukasz!</span>
+          <input class="form__input" type="text" id="work" placeholder="Tutaj możesz pisać bez ograniczeń :)" name="work" required><span class="form__tooltip" id="work">Napisz czego szukasz!</span>
         </div>
         <div class="form__text">Administratorem Pani/Pana danych osobowych jest Personnel Service Sp. z o.o. ul. Bolesława Chrobrego 5, 11-400 Kętrzyn, NIP: 8943069469, REGON: 363064852</div>
         <div class="form__text -redText">Zapoznaj się z naszą polityką prywatności </div>
         <div class="form__item -agree">
           <div class="form__check">
-            <input class="form__checkbox" type="checkbox" id="first">
+            <input class="form__checkbox" type="checkbox" id="all">
+            <label class="form__label" id="all"> </label>
+          </div>
+          <div class="form__inner">
+            <div class="form__text">Zaznacz wszystkie</div>
+          </div>
+        </div>
+        <div class="form__item -agree">
+          <div class="form__check">
+            <input class="form__checkbox" type="checkbox" id="first" name="first">
             <label class="form__label" id="first"> </label><span class="form__tooltip -inCheck" id="first">Potrzebujemy twojej zgody</span>
           </div>
           <div class="form__inner">
@@ -117,7 +127,7 @@
         </div>
         <div class="form__item -agree">
           <div class="form__check">
-            <input class="form__checkbox" type="checkbox" id="second">
+            <input class="form__checkbox" type="checkbox" id="second" name="second">
             <label class="form__label" id="second"> </label><span class="form__tooltip -inCheck" id="second">Potrzebujemy twojej zgody</span>
           </div>
           <div class="form__inner">

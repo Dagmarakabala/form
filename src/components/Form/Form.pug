@@ -10,12 +10,12 @@
     .form__item
       .form__inputName Imię
       .form__required *
-      input.form__input(type="text" id="name" required)
+      input.form__input(type="text" id="name" name="name" required)
       span.form__tooltip(id="name") Wpisz imię
     .form__item
       .form__inputName Nazwisko
       .form__required *
-      input.form__input(type="text" id="surname" required)
+      input.form__input(type="text" id="surname" name="surname" required)
       span.form__tooltip(id="surname") Wpisz nazwisko
     .form__item
       .form__inputName Data urodzenia
@@ -23,12 +23,12 @@
     .form__item
       .form__inputName Telefon komórkowy (+48 xxx xxx xxx)
       .form__required *
-      input.form__input(type="number" id="phoneNumber"  placeholder="+48" required)
+      input.form__input(type="number" id="phoneNumber"  placeholder="+48" name="phoneNumber" required)
       span.form__tooltip(id="phoneNumber") Wpisz poprawny numer telefonu
     .form__item
       .form__inputName Email
       .form__required *
-      input.form__input(type="email" id="email"  placeholder="example@domain.com" required)
+      input.form__input(type="email" id="email"  placeholder="example@domain.com" name="email" required)
       span.form__tooltip(id="email") Wpisz poprawny adres email
     .form__item
       .form__inputName Adres
@@ -36,28 +36,29 @@
     .form__item
       .form__inputName Miasto
       .form__required *
-      input.form__input(list="citys" id="city"  placeholder="Gliwice" required)
+      select(id="citys" name="city")
+        option(value="") 
+        option(value="Warszawa") Warszawa
+        option(value="Olsztyn") Olsztyn
+        option(value="Gliwice") Gliwice
       span.form__tooltip(id="city") Wybierz miasto
-      dataList(id="citys")
-        option(value="Warszawa")
-        option(value="Olsztyn")
-        option(value="Gliwice")
     .form__item
       .form__inputName Kraj
       .form__required *
-      input.form__input(list="countrys" id="country"  placeholder="Polska" required)
+      select(id="countrys" name="country")
+        option(value="") 
+        option(value="Polska") Polska
+        option(value="Czechy") Czechy
       span.form__tooltip(id="country") Wybierz kraj
-      dataList(id="countrys")
-        option(value="Polska")
     .form__item
       .form__inputName Wykształcenie
-      input.form__input(list="education"  placeholder="średnie")
-      dataList(id="education")
-        option(value="Podstawowe")
-        option(value="Gimnazjalne")
-        option(value="Zasadnicze zawodowe")
-        option(value="Średnie")
-        option(value="Wyższe")
+      select(id="education")
+        option(value="") 
+        option(value="Podstawowe") Podstawowe
+        option(value="Gimnazjalne") Gimnazjalne
+        option(value="Zasadnicze zawodowe") Zasadnicze zawodowe
+        option(value="Średnie") Średnie
+        option(value="Wyższe") Wyższe
     .form__item
       .form__inputName Kwalifikacje zawodowe
       input.form__input(type="text"  placeholder="Opisz swoje doświadczenie i umiejętności, Jeżeli masz uprawnienia napisz o nich")
@@ -68,13 +69,19 @@
     .form__item
       .form__inputName Jakiej pracy szukasz? (np. rodzaje stanowisk, branża, inne oczekiwania)
       .form__required *
-      input.form__input(type="text" id="work"  placeholder="Tutaj możesz pisać bez ograniczeń :)" required)
+      input.form__input(type="text" id="work"  placeholder="Tutaj możesz pisać bez ograniczeń :)" name="work" required)
       span.form__tooltip(id="work") Napisz czego szukasz!
     .form__text Administratorem Pani/Pana danych osobowych jest Personnel Service Sp. z o.o. ul. Bolesława Chrobrego 5, 11-400 Kętrzyn, NIP: 8943069469, REGON: 363064852
     .form__text.-redText Zapoznaj się z naszą polityką prywatności 
     .form__item.-agree
       .form__check
-        input.form__checkbox(type="checkbox" id="first")
+        input.form__checkbox(type="checkbox" id="all")
+        label.form__label(id="all") 
+      .form__inner
+        .form__text Zaznacz wszystkie
+    .form__item.-agree
+      .form__check
+        input.form__checkbox(type="checkbox" id="first" name="first")
         label.form__label(id="first") 
         span.form__tooltip.-inCheck(id="first") Potrzebujemy twojej zgody
       .form__inner
@@ -82,7 +89,7 @@
         .form__text Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu w związku z procesem rekrutacji.
     .form__item.-agree
       .form__check
-        input.form__checkbox(type="checkbox" id="second")
+        input.form__checkbox(type="checkbox" id="second" name="second")
         label.form__label(id="second") 
         span.form__tooltip.-inCheck(id="second") Potrzebujemy twojej zgody
       .form__inner

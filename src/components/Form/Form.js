@@ -10,8 +10,9 @@ const Form = {
     this.formSection = $('.form');
   },
   bindEvents() {
-    this.formSection.find('.form__button').on("click", this.checkForm.bind(this));
+    //this.formSection.find('.form__button').on("click", this.checkForm.bind(this));
     this.formSection.find('.form__checkbox').on("click", this.toggleCheckbox.bind(this));
+    this.formSection.find('.form__checkbox#all').on("click", this.allCheckbox.bind(this));
   },
   checkForm(event) {
     event.preventDefault();
@@ -76,7 +77,7 @@ const Form = {
     }
   },
   checkCity() {
-    const city = this.formSection.find('#city');
+    const city = this.formSection.find('#citys');
     const citySpan = this.formSection.find('.form__tooltip#city');
     const regCity = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ-\s]{2,}$/i;
      if (!regCity.test(city[0].value)) {
@@ -89,7 +90,7 @@ const Form = {
     }
   },
   checkCountry() {
-    const country = this.formSection.find('#country');
+    const country = this.formSection.find('#countrys');
     const countrySpan = this.formSection.find('.form__tooltip#country');
     const regCountry = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ-\s]{2,}$/i;
     if (!regCountry.test(country[0].value)) {
@@ -131,7 +132,27 @@ const Form = {
     const checkbox = $(event.currentTarget);
     const checkboxName = checkbox[0].id;
     const label = this.formSection.find(`.form__label#${checkboxName}`);
-    label.toggleClass('-checked')
+    label.toggleClass('-checked');
+    this.checkAndRemoveWhenNotAll();
+  },
+  allCheckbox(event) {
+    const allCheckboxs = this.formSection.find('.form__checkbox');
+    let i;
+    for (i = 0; i < allCheckboxs.length; i++) {
+      let checkboxName = allCheckboxs[i].id;
+      allCheckboxs[i].checked = true;
+      const label = this.formSection.find(`.form__label#${checkboxName}`);
+      label.addClass('-checked');
+    }
+  },
+  checkAndRemoveWhenNotAll() {
+    const allCheckbox = this.formSection.find('.form__checkbox#all');
+    const allLabel = this.formSection.find('.form__label#all');
+    const firstCheckbox = this.formSection.find('.form__checkbox#first');
+    const secondCheckbox = this.formSection.find('.form__checkbox#second');
+    if (firstCheckbox[0].checked == false || secondCheckbox[0].checked == false) {
+      allLabel.removeClass('-checked');
+    }
   },
   addNoValidate() {
     const form = this.formSection.find('.form__form');

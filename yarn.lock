@@ -5164,7 +5164,12 @@ jpegtran-bin@^4.0.0:
     bin-wrapper "^4.0.0"
     logalot "^2.0.0"
 
-jquery@^3.3.1:
+jquery-validation@^1.19.2:
+  version "1.19.2"
+  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.19.2.tgz#c602831b0d8c5881400af424e872757ce241eff9"
+  integrity sha512-yHaAqOGaAB7+p2u5lpzhhQVt3CBMUw3fHcuCJ7nXmXz0LWLHPN7yOhwnocp5nrn2SmnXR1jpV+whx2j1kLz1tQ==
+
+jquery@^3.1.1, jquery@^3.3.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
   integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
@@ -7599,6 +7604,13 @@ seek-bzip@^1.0.5:
   integrity sha512-e1QtP3YL5tWww8uKaOCQ18UxIT2laNBXHjV/S2WYCiK4udiv8lkG89KRIoCjUagnAmCBurjF4zEVX2ByBbnCjQ==
   dependencies:
     commander "^2.8.1"
+
+selectric@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/selectric/-/selectric-1.13.0.tgz#7ce8a750078bb6d1c44347216cae5610e2440985"
+  integrity sha512-kb1iOLBTvg0EiVieJjXlFj07RTKoom0a3/SedWD1tuQ47N2S9l4gvkhTvGhhhhdh/zCgkbZ44/GiczT8dWfAGA==
+  dependencies:
+    jquery "^3.1.1"
 
 semver-compare@^1.0.0:
   version "1.0.0"
