@@ -13,6 +13,7 @@ const Form = {
     //this.formSection.find('.form__button').on("click", this.checkForm.bind(this));
     this.formSection.find('.form__checkbox').on("click", this.toggleCheckbox.bind(this));
     this.formSection.find('.form__checkbox#all').on("click", this.allCheckbox.bind(this));
+
   },
   checkForm(event) {
     event.preventDefault();
@@ -137,6 +138,15 @@ const Form = {
     this.checkAndRemoveWhenNotAll();
   },
   allCheckbox(event) {
+    const checkbox = $(event.currentTarget);
+    if( checkbox.hasClass('-uncheck')) {
+      this.uncheckCheckbox();
+    }
+    else {
+      this.selectAllCheckbox();
+    }
+  },
+  selectAllCheckbox() {
     const allCheckboxs = this.formSection.find('.form__checkbox');
     let i;
     for (i = 0; i < allCheckboxs.length; i++) {
@@ -145,6 +155,27 @@ const Form = {
       const label = this.formSection.find(`.form__label#${checkboxName}`);
       label.addClass('-checked');
     }
+    const text =  this.formSection.find(`.form__text#all`);
+    text.text("Odznacz wszystkie");
+    allCheckboxs.addClass('-uncheck');
+  },
+  uncheckCheckbox() {
+    const checkbox =  this.formSection.find(`.form__checkbox#all`);
+    const allLabel = this.formSection.find('.form__label#all');
+    allLabel.removeClass('-checked');
+    console.log("fds")
+    const allCheckboxs = this.formSection.find('.form__checkbox');
+    const text =  this.formSection.find(`.form__text#all`);
+    let i;
+    for (i = 0; i < allCheckboxs.length; i++) {
+      let checkboxName = allCheckboxs[i].id;
+      allCheckboxs[i].checked = false;
+      const label = this.formSection.find(`.form__label#${checkboxName}`);
+      label.removeClass('-checked');
+    }
+    text.text("Zaznacz wszystkie");
+    allCheckboxs.removeClass('-uncheck');
+    checkbox.removeClass('-uncheck');
   },
   checkAndRemoveWhenNotAll() {
     const allCheckbox = this.formSection.find('.form__checkbox#all');
@@ -153,6 +184,10 @@ const Form = {
     const secondCheckbox = this.formSection.find('.form__checkbox#second');
     if (firstCheckbox[0].checked == false || secondCheckbox[0].checked == false) {
       allLabel.removeClass('-checked');
+      const text =  this.formSection.find(`.form__text#all`);
+      text.text("Zaznacz wszystkie");
+      const checkbox =  this.formSection.find(`.form__checkbox#all`);
+      checkbox.removeClass('-uncheck');
     }
   },
   addNoValidate() {

@@ -17,7 +17,6 @@
   border-radius: 0px;
   background: #ffffff;
   position: relative;
-  overflow: hidden;
 }
 
 .selectric .label {
@@ -106,15 +105,14 @@
 
 .selectric-hide-select {
   position: absolute;
-  right: 0;
   width: 0;
   height: 0;
-  opacity: 0;
 }
 
 .selectric-hide-select select {
   position: absolute;
   left: -100%;
+  opacity: 0;
 }
 
 .selectric-hide-select.selectric-is-native {
