@@ -163,7 +163,6 @@ const Form = {
     const checkbox =  this.formSection.find(`.form__checkbox#all`);
     const allLabel = this.formSection.find('.form__label#all');
     allLabel.removeClass('-checked');
-    console.log("fds")
     const allCheckboxs = this.formSection.find('.form__checkbox');
     const text =  this.formSection.find(`.form__text#all`);
     let i;
