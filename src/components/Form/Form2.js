@@ -8,6 +8,7 @@ import 'selectric';
   $.validator.addMethod("numberPhone", function(value, element) {
   return this.optional( element ) || /^[0-9]{9}$/.test( value );
   });
+  
   $('.form__form').validate( {
     rules: {
       name: "required",
