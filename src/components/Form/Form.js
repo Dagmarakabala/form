@@ -93,6 +93,7 @@ const Form = {
     const country = this.formSection.find('#countrys');
     const countrySpan = this.formSection.find('.form__tooltip#country');
     const regCountry = /^[a-zA-ZęóąśłżźćńĘÓĄŚŁŻŹĆŃ-\s]{2,}$/i;
+    console.log(country)
     if (!regCountry.test(country[0].value)) {
       country.addClass('-redBorder');
       countrySpan.addClass('-visible');
