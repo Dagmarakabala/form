@@ -1,4 +1,1 @@
-**/assets/scripts/
-build/assets/styles/
-**/node_modules/
-**/yarn-error.log
+build
