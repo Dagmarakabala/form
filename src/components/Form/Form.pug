@@ -77,14 +77,14 @@
       .form__check
         input.form__checkbox(type="checkbox" id="all")
         label.form__label(id="all") 
-      .form__inner
+      .form__inner(id="all")
         .form__text(id="all") Zaznacz wszystkie
     .form__item.-agree
       .form__check
         input.form__checkbox(type="checkbox" id="first" name="first")
         label.form__label(id="first") 
         span.form__tooltip.-inCheck(id="first") Potrzebujemy twojej zgody
-      .form__inner
+      .form__inner(id="first")
         .form__required *
         .form__text Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu w związku z procesem rekrutacji.
     .form__item.-agree
@@ -92,7 +92,7 @@
         input.form__checkbox(type="checkbox" id="second" name="second")
         label.form__label(id="second") 
         span.form__tooltip.-inCheck(id="second") Potrzebujemy twojej zgody
-      .form__inner
+      .form__inner(id="second")
         .form__required *
         .form__text Wyrażam zgodę na przetwarzanie moich danych osobowych podanych w powyższym formularzu w celu otrzymania informacji o ofertach pracy związanych z rekrutacją. 
     button.form__button(type='submit') Wyślij

@@ -33,6 +33,7 @@ const Form = {
   },
   bindEvents() {
     this.$target.form.find('.form__checkbox').on("click", this.toggleCheckbox.bind(this));
+    this.$target.form.find('.form__inner').on("click", this.onclickOnText.bind(this));
     this.$target.form.find('.form__checkbox#all').on("click", this.allCheckbox.bind(this));
     $(this.$target.citys).selectric({
       disableOnMobile: false,
@@ -201,6 +202,31 @@ const Form = {
       const checkbox =  this.$target.form.find(`.form__checkbox#all`);
       checkbox.removeClass('-uncheck');
     }
+  },
+  onclickOnText(event) {
+    const inner = $(event.currentTarget);
+    const name = inner[0].id;
+    const label = this.$target.form.find(`.form__label#${name}`);
+    const checkbox = this.$target.form.find(`.form__checkbox#${name}`);
+    if( checkbox[0].checked == false) {
+      checkbox[0].checked = true;
+      label.addClass('-checked');
+    }
+    else {
+      checkbox[0].checked = false;
+      label.removeClass('-checked');
+
+    }
+    if(name === 'all') {
+      if(checkbox.hasClass('-uncheck')) {
+        this.uncheckCheckbox();
+      }
+      else {
+        this.selectAllCheckbox();
+      }
+    }
+    this.checkAndRemoveWhenNotAll();
+  
   },
 };
 export default Form;
